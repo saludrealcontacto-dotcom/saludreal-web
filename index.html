@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salud Real | Medicina Regenerativa, Sueroterapias, Salud Mental y Control de Peso</title>
+  <meta name="description" content="Centro Médico Salud Real: medicina regenerativa, sueroterapias personalizadas, salud mental y control de peso en Santiago de Chile. Agenda por WhatsApp o reserva online." />
+  <meta name="keywords" content="medicina regenerativa, sueroterapia, sueroterapias, salud mental, psicología, psiquiatría, control de peso, clínica, centro médico, Santiago de Chile" />
+  <link rel="canonical" href="https://www.saludreal.cl/" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    /* ====== Reset & Base ====== */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    :root{
+      --primary:#1e3a8a; /* Azul corporativo oscuro */
+      --secondary:#0f766e; /* Verde azulado */
+      --cta:#06d6a0; /* Verde menta brillante (llamada a la acción) */
+      --accent:#118ab2; /* Azul claro */
+      --text:#2c3e50; /* Gris oscuro para texto */
+      --muted:#64748b; /* Gris claro para texto secundario */
+    }
+    html { scroll-behavior:smooth; }
+    body{
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial;
+      line-height:1.6; color:var(--text); overflow-x:hidden; background:#f8fafc; /* Fondo ligeramente gris */
+    }
+    img{ max-width:100%; height:auto; display:block; }
+
+    /* ====== Header ====== */
+    header{
+      background: rgba(255, 255, 255, 0.9); /* Blanco semitransparente */
+      color: var(--primary); padding:1rem 0; position:fixed; inset:0 0 auto 0; z-index:1000;
+      box-shadow:0 4px 20px rgba(0,0,0,.08); backdrop-filter: blur(10px);
+    }
+    nav{ max-width:1400px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:0 2rem; }
+    .logo{ font-size:1.8rem; font-weight:800; display:flex; gap:.8rem; align-items:center; letter-spacing:.3px; color: var(--primary); }
+    .logo i{ background:linear-gradient(45deg, var(--cta), var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-size:2rem; }
+    .nav-links{ display:flex; list-style:none; gap:2rem; }
+    .nav-links a{ color:var(--primary); text-decoration:none; font-weight:600; position:relative; transition:.3s; }
+    .nav-links a::after{ content:''; position:absolute; left:50%; bottom:-6px; height:2px; width:0; background:var(--cta); transform:translateX(-50%); transition:.3s; }
+    .nav-links a:hover{ color:var(--cta); }
+    .nav-links a:hover::after{ width:100%; }
+
+    /* ====== Hero ====== */
+    .hero{
+      color:#fff; text-align:center; position:relative; overflow:hidden;
+      padding:10rem 2rem 8rem;
+      background-image: linear-gradient(135deg, rgba(30, 58, 138, 0.85), rgba(15, 118, 110, 0.85)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ab?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero h1{
+      font-size:3.4rem; margin-bottom:1rem; font-weight:900;
+      text-shadow:2px 4px 8px rgba(0,0,0,.35);
+    }
+    .subtitle{ font-size:1.3rem; opacity:.95; margin-bottom:.75rem; }
+    .hero p{ max-width:820px; margin:.75rem auto 2.25rem; font-size:1.15rem; opacity:.9; text-shadow:1px 2px 4px rgba(0,0,0,.25); }
+    .hero-buttons{ display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .cta-button{
+      background:linear-gradient(45deg, var(--cta), var(--accent)); color:#fff; padding:1.1rem 2rem; border:none; border-radius:999px;
+      text-decoration:none; display:inline-flex; align-items:center; gap:.6rem; font-weight:800; letter-spacing:.4px; box-shadow:0 8px 25px rgba(6,214,160,.35); transition:.25s;
+      text-transform:uppercase;
+    }
+    .cta-button:hover{ transform: translateY(-3px); box-shadow:0 12px 35px rgba(6,214,160,.55); }
+    .cta-button.secondary{ background:transparent; border:2px solid #fff; box-shadow:0 8px 25px rgba(255,255,255,.25); }
+    .cta-button.secondary:hover{ background:#fff; color:var(--primary); }
+
+    /* ====== Sections & Utilities ====== */
+    section{ padding:6rem 2rem; max-width:1400px; margin:0 auto; }
+    .section-title{
+      text-align:center; font-size:2.6rem; margin-bottom:1rem; color:var(--primary); font-weight:900; position:relative;
+    }
+    .section-title::after{
+      content:''; position:absolute; left:50%; bottom:-10px; transform:translateX(-50%);
+      width:84px; height:4px; background:linear-gradient(45deg, var(--cta), var(--accent)); border-radius:2px;
+    }
+    .section-subtitle{ text-align:center; font-size:1.15rem; color:var(--muted); margin:0 auto 3rem; max-width:760px; line-height:1.7; }
+
+    /* ====== Stats ====== */
+    .stats{ background: #fff; transform: translateY(-3rem); position:relative; z-index:2; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,.1); padding: 3rem 2rem;}
+    .stats-container{ max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem; }
+    .stat-card{ background:transparent; padding:1rem; text-align:center; }
+    .stat-number{ font-size:2.4rem; font-weight:900; color:var(--primary); }
+    .stat-label{ color:var(--muted); font-weight:600; }
+
+    /* ====== About ====== */
+    .about{ background: #f8fafc; }
+    .about-content{ display:grid; grid-template-columns:1fr 1fr; gap:3.2rem; align-items:center; margin-bottom:3.5rem; }
+    .media-frame{ border-radius:22px; overflow:hidden; box-shadow:0 16px 48px rgba(0,0,0,.12); }
+    .media-frame img{ width:100%; height:420px; object-fit:cover; }
+    .about-text{ font-size:1.08rem; color:#374151; line-height:1.8; }
+    .about-highlight{ background: linear-gradient(45deg, var(--cta), var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:800; }
+
+    .expertise-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1.5rem; margin-top:2rem; }
+    .expertise-card{ background:#fff; padding:2rem; border-radius:18px; text-align:center; box-shadow:0 8px 24px rgba(0,0,0,.06); border:1px solid #e2e8f0; transition:.25s; }
+    .expertise-card:hover{ transform: translateY(-6px); border-color:var(--cta); box-shadow:0 12px 30px rgba(0,0,0,.1); }
+    .expertise-card i{ font-size:2.6rem; color:var(--cta); margin-bottom:1rem; }
+    .expertise-card h3{ color:var(--primary); margin-bottom:.5rem; }
+
+    /* ====== Services ====== */
+    .services{ background: #fff; }
+    .services-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap:2rem; margin-top:2rem; }
+    .service-card{ background:#fff; padding:2rem; border-radius:22px; box-shadow:0 15px 40px rgba(0,0,0,.08); border:1px solid #e2e8f0; transition:.25s; overflow:hidden; position:relative; }
+    .service-card::before{ content:''; position:absolute; left:0; right:0; top:0; height:5px; background:linear-gradient(45deg, var(--cta), var(--accent)); }
+    .service-card:hover{ transform: translateY(-8px); box-shadow:0 22px 56px rgba(0,0,0,.12); border-color:var(--cta); }
+    .service-header{ display:flex; align-items:center; gap:1rem; margin-bottom:1rem; }
+    .service-icon{ width:64px; height:64px; border-radius:16px; background:linear-gradient(45deg, var(--cta), var(--accent)); display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.8rem; flex-shrink: 0; }
+    .service-card h3{ font-size:1.5rem; color:var(--primary); font-weight:900; }
+    .service-description{ color:#4b5563; margin: 1rem 0; }
+    .service-benefits{ list-style:none; padding-left: 0; color:#374151; }
+    .service-benefits li{ padding:.4rem 0 .4rem 1.6rem; position:relative; }
+    .service-benefits li::before{ content:'✓'; position:absolute; left:0; color:var(--cta); font-weight:900; }
+    .service-image{ width:100%; height:200px; border-radius:14px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,.08); margin-top:1.5rem; }
+    .service-image img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ====== Promotions & WhatsApp ====== */
+    .promotions{ background:linear-gradient(135deg, var(--primary), var(--secondary)); color:#fff; }
+    .promotions .section-title, .promotions .section-subtitle{ color:#fff; }
+    .promotion-card{ background: rgba(255,255,255,.98); color:var(--primary); padding:2rem; border-radius:22px; box-shadow:0 20px 60px rgba(0,0,0,.18); margin:1.5rem auto; max-width: 900px; }
+    .discount{ background:linear-gradient(45deg, #ef4444, #dc2626); color:#fff; padding:.7rem 1.2rem; border-radius:999px; display:inline-block; font-weight:800; margin-bottom:1rem; }
+    .promotion-features{ display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin:1.2rem 0; }
+    .feature-highlight{ background: rgba(6,214,160,.1); padding:1rem; border-radius:14px; text-align:center; border:1px solid rgba(6,214,160,.2); }
+    .feature-highlight i{ font-size:1.7rem; color:var(--cta); margin-bottom:.4rem; }
+    .whatsapp-contact{ background: linear-gradient(135deg, #25d366, #20b358); color:#fff; padding:2rem; text-align:center; border-radius:22px; box-shadow:0 15px 40px rgba(37,211,102,.28); margin-top:1.5rem; }
+    .whatsapp-button{ background:#fff; color:#25d366; padding:1rem 1.4rem; border-radius:999px; text-decoration:none; font-weight:900; display:inline-flex; align-items:center; gap:.7rem; transition:.25s; }
+    .whatsapp-button:hover{ transform: scale(1.05) translateY(-3px); }
+
+    /* ====== Booking ====== */
+    .booking{ background: #f8fafc; }
+    .booking-form{ background:#fff; padding:2.2rem; border-radius:22px; box-shadow:0 18px 50px rgba(0,0,0,.08); max-width:820px; margin:0 auto; border:1px solid #e2e8f0; }
+    .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+    .form-group{ margin-bottom:1.2rem; }
+    .form-group label{ display:block; margin-bottom:.6rem; font-weight:800; color:var(--primary); }
+    .form-group input, .form-group select, .form-group textarea{
+      width:100%; padding:1rem 1.1rem; border:2px solid #e5e7eb; border-radius:14px; font-size:1rem; transition:.25s; background:#f8fafc; font-family:inherit;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus{
+      border-color:var(--cta); outline:none; background:#fff; box-shadow:0 0 0 4px rgba(6,214,160,.12);
+    }
+
+    /* ====== Reviews & Team ====== */
+    .reviews{ background: #fff; }
+    .reviews-container{ display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:1.4rem; margin-top:2rem; }
+    .review-card{ background: #f8fafc; padding:2rem; border-radius:22px; box-shadow:0 15px 40px rgba(0,0,0,.06); border-left:5px solid var(--cta); }
+    .review-header{ display:flex; align-items:center; gap:1rem; margin-bottom:.8rem; }
+    .review-avatar{ width:60px; height:60px; border-radius:50%; background:linear-gradient(45deg, var(--cta), var(--accent)); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:900; font-size:1.3rem; }
+    .review-info h4{ color:var(--primary); }
+    .stars{ color:#fbbf24; font-size:1.1rem; }
+
+    .team{ background: #f8fafc; }
+    .team-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.4rem; margin-top:2rem; }
+    .team-card{ background:#fff; border-radius:22px; overflow:hidden; box-shadow:0 15px 40px rgba(0,0,0,.08); text-align:center; transition: .25s; }
+    .team-card:hover { transform: translateY(-5px); box-shadow:0 20px 50px rgba(0,0,0,.12); }
+    .team-image{ height:260px; background:linear-gradient(45deg, var(--cta), var(--accent)); display:flex; align-items:center; justify-content:center; font-size:3rem; color:#fff; }
+    .team-info{ padding:1.6rem; }
+    .team-name{ font-size:1.3rem; font-weight:900; color:var(--primary); }
+    .team-role{ color:var(--cta); font-weight:800; margin-bottom:.4rem; }
+    .team-description{ color:#64748b; }
+
+    /* ====== Footer ====== */
+    footer{ background: linear-gradient(135deg, var(--primary), var(--secondary)); color:#fff; padding:4rem 2rem 2rem; }
+    .footer-content{ max-width:1400px; margin:0 auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:2rem; }
+    .footer-section h3{ color:var(--cta); margin-bottom:1rem; }
+    .footer-section a, .footer-section p{ color:rgba(255,255,255,.85); text-decoration:none; display:flex; gap:.6rem; align-items:center; margin-bottom: .5rem; }
+    .social-links{ display:flex; gap:.8rem; margin-top:1rem; }
+    .social-links a{ width:44px; height:44px; background:rgba(255,255,255,.1); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.3rem; transition:.25s; }
+    .social-links a:hover{ background:var(--cta); transform: translateY(-3px); }
+
+    /* ====== Responsive ====== */
+    @media (max-width: 1024px) {
+      .nav-links{ display:none; /* Considerar un menú hamburguesa para el futuro */ }
+      .hero h1{ font-size:2.8rem; }
+      .about-content{ grid-template-columns:1fr; }
+      .services-grid{ grid-template-columns:1fr; }
+    }
+    @media (max-width: 768px) {
+      .hero{ padding:8.5rem 1rem 5rem; }
+      .hero h1{ font-size:2.2rem; }
+      section{ padding:4rem 1rem; }
+      .form-row{ grid-template-columns:1fr; }
+      .stats-container{ grid-template-columns:repeat(2, 1fr); }
+      .stats { border-radius: 0; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <i class="fas fa-heartbeat"></i> Salud Real
+      </div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+        <li><a href="#promociones">Promociones</a></li>
+        <li><a href="#reservas">Reservas</a></li>
+        <li><a href="#opiniones">Opiniones</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="inicio" class="hero">
+    <h1>Centro Médico de Medicina Regenerativa</h1>
+    <p class="subtitle">Sueroterapias · Salud Mental · Control de Peso</p>
+    <p>Combinamos ciencia y calidez humana para recuperar tu bienestar. Protocolos personalizados con foco en resultados reales y seguimiento cercano.</p>
+    <div class="hero-buttons">
+      <a href="#reservas" class="cta-button"><i class="fas fa-calendar-plus"></i> Reservar Cita</a>
+      <a class="cta-button secondary" target="_blank" rel="noopener" href="https://wa.me/56935577285?text=Hola%20Salud%20Real,%20quisiera%20información%20sobre%20sus%20servicios"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</a>
+    </div>
+  </main>
+  <section class="stats" aria-label="Indicadores">
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-number">5000+</div>
+        <div class="stat-label">Pacientes Atendidos</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Años de Experiencia</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">Satisfacción</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2500+</div>
+        <div class="stat-label">Sueroterapias Aplicadas</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros" class="about">
+    <h2 class="section-title">Medicina Integral a tu Alcance</h2>
+    <p class="section-subtitle">Creemos en una salud que integra mente, cuerpo y bienestar general, utilizando protocolos basados en evidencia.</p>
+    <div class="about-content">
+      <figure class="media-frame">
+        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1200&q=80"
+             alt="Equipo médico profesional de Salud Real en un ambiente clínico moderno y acogedor"
+             loading="lazy" decoding="async" />
+      </figure>
+      <div class="about-text">
+        <p>En <span class="about-highlight">Salud Real</span>, nuestro equipo multidisciplinario aborda tu salud desde todos los ángulos: nutrición, salud mental, medicina regenerativa y hábitos de vida.</p>
+        <p>Desarrollamos <strong>protocolos personalizados</strong> que pueden incluir sueroterapias, soporte psicológico y psiquiátrico, y programas de control de peso con seguimiento médico continuo.</p>
+        <p>Nuestro foco está en lograr resultados medibles y un bienestar que perdure en el tiempo.</p>
+      </div>
+    </div>
+    <div class="expertise-grid" aria-label="Pilares de nuestra atención">
+      <div class="expertise-card">
+        <i class="fas fa-microscope"></i>
+        <h3>Tecnología Avanzada</h3>
+        <p>Diagnóstico y monitoreo con equipos de última generación para mayor precisión.</p>
+      </div>
+      <div class="expertise-card">
+        <i class="fas fa-user-md"></i>
+        <h3>Equipo Especializado</h3>
+        <p>Profesionales certificados en medicina, psicología, psiquiatría y enfermería IV.</p>
+      </div>
+      <div class="expertise-card">
+        <i class="fas fa-heart"></i>
+        <h3>Atención Personalizada</h3>
+        <p>Creamos planes a tu medida, con metas claras y un seguimiento continuo y cercano.</p>
+      </div>
+      <div class="expertise-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Seguridad y Confianza</h3>
+        <p>Aplicamos estrictos protocolos de bioseguridad para garantizar tu tranquilidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="services">
+    <h2 class="section-title">Nuestros Servicios Principales</h2>
+    <p class="section-subtitle">Soluciones enfocadas en medicina regenerativa para potenciar tu salud desde adentro.</p>
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-header">
+          <div class="service-icon"><i class="fas fa-tint"></i></div>
+          <h3>Sueroterapias Avanzadas</h3>
+        </div>
+        <p class="service-description">Fórmulas personalizadas para energía, sistema inmune, detox, recuperación deportiva y anti-envejecimiento, aplicadas por enfermeras certificadas.</p>
+        <ul class="service-benefits">
+          <li>Absorción inmediata y máxima biodisponibilidad</li>
+          <li>Protocolos ajustados a tus objetivos y exámenes</li>
+          <li>Resultados notorios en vitalidad y bienestar</li>
+        </ul>
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1605289982721-a2da45873343?auto=format&fit=crop&w=800&q=80" alt="Paciente recibiendo una sueroterapia intravenosa en un entorno clínico limpio y seguro." loading="lazy" />
+        </div>
+      </article>
+      <article class="service-card">
+        <div class="service-header">
+          <div class="service-icon"><i class="fas fa-brain"></i></div>
+          <h3>Salud Mental Integral</h3>
+        </div>
+        <p class="service-description">Apoyo en psicología y psiquiatría para manejar ansiedad, estrés y burnout, integrando la medicina del estilo de vida en tu tratamiento.</p>
+        <ul class="service-benefits">
+          <li>Psicoeducación y herramientas prácticas para el día a día</li>
+          <li>Enfoque humanizado, confidencial y sin prejuicios</li>
+          <li>Coordinación interna para un tratamiento integral</li>
+        </ul>
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1579694119103-302a2a7f539b?auto=format&fit=crop&w=800&q=80" alt="Sesión de terapia de salud mental en un consultorio tranquilo y profesional." loading="lazy" />
+        </div>
+      </article>
+      <article class="service-card">
+        <div class="service-header">
+          <div class="service-icon"><i class="fas fa-weight"></i></div>
+          <h3>Control de Peso Médico</h3>
+        </div>
+        <p class="service-description">Programas estructurados que combinan nutrición, actividad física y cambios conductuales, con opción de farmacoterapia segura bajo supervisión.</p>
+        <ul class="service-benefits">
+          <li>Planes alimentarios personalizados y realistas</li>
+          <li>Seguimiento de metas mensuales con indicadores clave</li>
+          <li>Estrategias para mantenimiento y prevención del efecto rebote</li>
+        </ul>
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?auto=format&fit=crop&w=800&q=80" alt="Alimentos saludables como frutas y verduras que forman parte de un plan de control de peso." loading="lazy" />
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="equipo" class="team">
+    <h2 class="section-title">Nuestro Equipo</h2>
+    <p class="section-subtitle">Profesionales comprometidos con tu salud y bienestar integral.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-image"><i class="fas fa-user-md"></i></div>
+        <div class="team-info">
+          <h3 class="team-name">Dr. Francisco Cañón</h3>
+          <p class="team-role">Director Médico</p>
+          <p class="team-description">Especialista en medicina integral y regenerativa, con más de 15 años de experiencia en sueroterapias y medicina preventiva.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-image"><i class="fas fa-user-nurse"></i></div>
+        <div class="team-info">
+          <h3 class="team-name">Equipo de Enfermería</h3>
+          <p class="team-role">Coordinación de Sueroterapias</p>
+          <p class="team-description">Profesionales con certificación en terapias IV, garantizando un manejo seguro y eficiente de todos los procedimientos.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-image"><i class="fas fa-user-tie"></i></div>
+        <div class="team-info">
+          <h3 class="team-name">Atención al Paciente</h3>
+          <p class="team-role">Gestión y Seguimiento</p>
+          <p class="team-description">Brindamos un acompañamiento cercano antes, durante y después de cada tratamiento para resolver todas tus dudas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="promociones" class="promotions">
+    <div class="promotion-card">
+      <div class="discount">¡OFERTA ESPECIAL!</div>
+      <h3>Pack Bienestar: 4 Sesiones de Sueroterapia</h3>
+      <p style="text-align: center; margin-top: -0.5rem; margin-bottom: 1.5rem;">El impulso que necesitas para renovar tu energía y fortalecer tus defensas.</p>
+      <div class="promotion-features">
+        <div class="feature-highlight"><i class="fas fa-user-check"></i><h4>Evaluación Incluida</h4><p>Consulta inicial para definir tus objetivos.</p></div>
+        <div class="feature-highlight"><i class="fas fa-flask"></i><h4>Fórmulas a Medida</h4><p>Personalizamos cada sesión según tus necesidades.</p></div>
+        <div class="feature-highlight"><i class="fas fa-calendar-check"></i><h4>Flexibilidad</h4><p>Agenda las sesiones a tu propio ritmo.</p></div>
+        <div class="feature-highlight"><i class="fas fa-medal"></i><h4>Seguimiento</h4><p>Monitoreo profesional durante todo el proceso.</p></div>
+      </div>
+      <div class="whatsapp-contact">
+        <h3>¿List@ para empezar tu transformación?</h3>
+        <p>Escríbenos y agenda tu primera sesión hoy mismo.</p>
+        <a class="whatsapp-button" target="_blank" rel="noopener" href="https://wa.me/56935577285?text=Hola%20Salud%20Real,%20me%20interesa%20la%20promoción%20de%204%20sesiones%20de%20sueroterapia."><i class="fab fa-whatsapp"></i> Consultar por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservas" class="booking">
+    <h2 class="section-title">Reserva tu Cita</h2>
+    <p class="section-subtitle">Completa el formulario y nuestro equipo te contactará a la brevedad para confirmar tu hora.</p>
+    <form class="booking-form" id="bookingForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre"><i class="fas fa-user"></i> Nombre Completo</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre y apellido" required />
+        </div>
+        <div class="form-group">
+          <label for="telefono"><i class="fas fa-phone"></i> Teléfono</label>
+          <input id="telefono" name="telefono" type="tel" placeholder="+56 9 XXXX XXXX" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email"><i class="fas fa-envelope"></i> Correo Electrónico</label>
+        <input id="email" name="email" type="email" placeholder="tu.correo@ejemplo.com" required />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="servicio"><i class="fas fa-briefcase-medical"></i> Servicio de Interés</label>
+          <select id="servicio" name="servicio" required>
+            <option value="">Selecciona un servicio</option>
+            <option value="sueroterapia-bono">Promo Bono 4 Sueroterapias</option>
+            <option value="sueroterapia">Sueroterapia Individual</option>
+            <option value="salud-mental">Salud Mental (Psicología/Psiquiatría)</option>
+            <option value="control-peso">Control de Peso</option>
+            <option value="consulta">Consulta Médica Integral</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fecha"><i class="fas fa-calendar"></i> Fecha de Preferencia</label>
+          <input id="fecha" name="fecha" type="date" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="comentarios"><i class="fas fa-comment-dots"></i> Motivo de tu consulta</label>
+        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Cuéntanos brevemente tu objetivo o qué te gustaría mejorar..."></textarea>
+      </div>
+      <button type="submit" class="cta-button" style="width:100%"><i class="fas fa-paper-plane"></i> Enviar Solicitud de Reserva</button>
+    </form>
+  </section>
+
+  <section id="opiniones" class="reviews">
+    <h2 class="section-title">Testimonios de Pacientes</h2>
+    <p class="section-subtitle">Historias reales de personas que han confiado en nosotros para mejorar su bienestar.</p>
+    <div class="reviews-container">
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">PS</div>
+          <div class="review-info"><h4>Paola Sepúlveda</h4><div class="stars">★★★★★</div></div>
+        </div>
+        <p>"La sueroterapia me cambió la vida. Mi nivel de energía aumentó increíblemente. El equipo es muy cercano y profesional, te hacen sentir en confianza desde el primer minuto."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">MC</div>
+          <div class="review-info"><h4>Manuel Cornejo</h4><div class="stars">★★★★★</div></div>
+        </div>
+        <p>"Vine por el programa de control de peso y los resultados han sido fantásticos. La consulta fue súper completa y el plan es fácil de seguir. ¡Totalmente recomendado!"</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">JF</div>
+          <div class="review-info"><h4>Javiera Fuentes</h4><div class="stars">★★★★★</div></div>
+        </div>
+        <p>"Decidí combinar las sueroterapias con apoyo psicológico y fue la mejor decisión. Me siento mucho más estable y con ánimo. Agradezco el enfoque integral que tienen."</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contacto">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3><i class="fas fa-heartbeat"></i> Salud Real</h3>
+        <p>Medicina regenerativa con enfoque humano. Resultados que se sienten y se notan.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/56935577285" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Contacto Directo</h3>
+        <a href="https://wa.me/56935577285" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp: +56 9 3557 7285</a>
+        <a href="mailto:contacto@saludreal.cl"><i class="fas fa-envelope"></i> contacto@saludreal.cl</a>
+        <a href="https://maps.app.goo.gl/TEV8EGRg5z2mX8Yx8" target="_blank" rel="noopener">
+          <i class="fas fa-map-marker-alt"></i> San Pío X 2445, Of. 209, Providencia, Santiago
+        </a>
+      </div>
+      <div class="footer-section">
+        <h3>Horarios de Atención</h3>
+        <p><i class="fas fa-clock"></i> Lunes a Viernes:</p>
+        <p style="margin-left:1.6rem;">10:00 a 19:00 hrs.</p>
+        <p><i class="fas fa-calendar-times"></i> Fines de Semana y Feriados:</p>
+        <p style="margin-left:1.6rem;">Cerrado</p>
+      </div>
+      <div class="footer-section">
+        <h3>Nuestros Servicios</h3>
+        <p>• Sueroterapias Personalizadas</p>
+        <p>• Salud Mental y Bienestar</p>
+        <p>• Control de Peso Médico</p>
+        <p>• Medicina Preventiva</p>
+        <p>• Consulta Médica Integral</p>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.2); margin-top:2rem; padding-top:1.5rem; text-align:center;">
+      <p style="font-size:.9rem; color:rgba(255,255,255,.8);">
+        © 2025 Salud Real | Todos los derechos reservados.
+        <br>
+        La información de este sitio es referencial y no reemplaza una consulta médica.
+      </p>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "Salud Real",
+    "description": "Centro médico especialista en medicina regenerativa, sueroterapias, salud mental y control de peso en Santiago de Chile.",
+    "telephone": "+56935577285",
+    "email": "contacto@saludreal.cl",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "San Pío X 2445, Oficina 209",
+      "addressLocality": "Providencia",
+      "addressRegion": "Santiago",
+      "addressCountry": "CL"
+    },
+    "url": "https://www.saludreal.cl",
+    "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ab?auto=format&fit=crop&w=1200&q=80",
+    "openingHours": "Mo-Fr 10:00-19:00",
+    "areaServed": "Santiago, Chile",
+    "founder": {
+      "@type": "Person",
+      "name": "Dr. Francisco Cañón"
+    }
+  }
+  </script>
+</body>
+</html>
